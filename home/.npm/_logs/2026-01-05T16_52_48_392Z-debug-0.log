@@ -1,0 +1,19 @@
+0 verbose cli /home/zane/.nvm/versions/node/v24.12.0/bin/node /home/zane/.nvm/versions/node/v24.12.0/bin/npm
+1 info using npm@11.6.2
+2 info using node@v24.12.0
+3 silly config load:file:/home/zane/.nvm/versions/node/v24.12.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/zane/.npmrc
+5 silly config load:file:/home/zane/.nvm/versions/node/v24.12.0/etc/npmrc
+6 verbose title npm view @anthropic-ai/claude-code@latest version
+7 verbose argv "view" "@anthropic-ai/claude-code@latest" "version" "--prefer-online"
+8 verbose logfile logs-max:10 dir:/home/zane/.npm/_logs/2026-01-05T16_52_48_392Z-
+9 verbose logfile /home/zane/.npm/_logs/2026-01-05T16_52_48_392Z-debug-0.log
+10 silly logfile start cleaning logs, removing 1 files
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/@anthropic-ai%2fclaude-code 285ms (cache revalidated)
+13 verbose cwd /home/zane
+14 verbose os Linux 6.18.3-zen1-1-zen
+15 verbose node v24.12.0
+16 verbose npm  v11.6.2
+17 verbose exit 0
+18 info ok

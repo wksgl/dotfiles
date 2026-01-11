@@ -1,0 +1,25 @@
+# 核心模块
+zmodule environment
+zmodule git
+zmodule input
+zmodule termtitle
+zmodule utility
+zmodule completion  # 禁用completion模块以避免冲突
+zmodule git-info
+zmodule duration-info
+
+# 补全和提示
+zmodule zsh-users/zsh-completions
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-history-substring-search
+zmodule zdharma-continuum/fast-syntax-highlighting
+
+# 其他工具
+zmodule supercrabtree/k
+zmodule hlissner/zsh-autopair
+zmodule pabloariasal/zfm
+zmodule agkozak/zsh-z
+zmodule Aloxaf/fzf-tab
+
+# 禁用zimfw的prompt模块，使用starship
+zstyle ':zim:prompt' theme off

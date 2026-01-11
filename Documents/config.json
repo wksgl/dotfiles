@@ -1,0 +1,2338 @@
+{
+  "dns": {
+    "final": "dns_proxy",
+    "independent_cache": true,
+    "rules": [
+      {
+        "clash_mode": "direct",
+        "server": "dns_cn"
+      },
+      {
+        "clash_mode": "global",
+        "server": "dns_proxy"
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "server": "dns_block"
+      },
+      {
+        "rule_set": [
+          "geosite-cn",
+          "geoip-cn"
+        ],
+        "server": "dns_cn"
+      },
+      {
+        "rule_set": "geosite-geolocation-!cn",
+        "server": "dns_proxy"
+      }
+    ],
+    "servers": [
+      {
+        "address": "https://1.1.1.1/dns-query",
+        "address_resolver": "dns_resolver",
+        "detour": "手动切换",
+        "strategy": "ipv4_only",
+        "tag": "dns_proxy"
+      },
+      {
+        "address": "h3://dns.alidns.com/dns-query",
+        "address_resolver": "dns_resolver",
+        "detour": "direct",
+        "strategy": "ipv4_only",
+        "tag": "dns_cn"
+      },
+      {
+        "address": "114.114.114.114",
+        "detour": "direct",
+        "strategy": "ipv4_only",
+        "tag": "dns_resolver"
+      },
+      {
+        "address": "rcode://success",
+        "strategy": "ipv4_only",
+        "tag": "dns_block"
+      }
+    ],
+    "strategy": "ipv4_only"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    },
+    "clash_api": {
+      "default_mode": "rule",
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "metacubexd",
+      "external_ui_download_detour": "direct",
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+    }
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 8080,
+      "set_system_proxy": true,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tag": "mixed-in",
+      "type": "mixed"
+    }
+  ],
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  "outbounds": [
+    {
+      "idle_timeout": "10m",
+      "interrupt_exist_connections": true,
+      "interval": "3m",
+      "outbounds": [
+        "剩余流量：475.69 GB",
+        "套餐到期：长期有效",
+        "L1|香港01|中转|流媒体|3x",
+        "L1|香港02|中转|流媒体|3x",
+        "L1|香港03|中转|流媒体|3x",
+        "福建专用|香港04|中转|流媒体|3x",
+        "L1|新加坡01|中转|流媒体|3x",
+        "L1|新加坡02|中转|流媒体|3x",
+        "L1|新加坡03|中转|流媒体|3x",
+        "L1|新加坡04|中转|流媒体|3x",
+        "L1|新加坡05|中转|流媒体|3x",
+        "L1|新加坡06|流媒体|3x",
+        "L1|新加坡01|直连|流媒体|2x",
+        "L1|新加坡02|直连|流媒体|2x",
+        "L1|新加坡03|直连|流媒体|2x",
+        "L1|新加坡04|直连|流媒体|2x",
+        "L1|新加坡05|直连|流媒体|2x",
+        "L1|日本01|中转|流媒体|3x",
+        "L1|日本02|中转|流媒体|3x",
+        "L1|日本03|中转|流媒体|3x",
+        "L1|日本04|中转|流媒体|3x",
+        "L1|日本05|中转|流媒体|3x",
+        "L1|日本01|直连|流媒体|2x",
+        "L1|日本02|直连|流媒体|2x",
+        "L1|日本03|直连|流媒体|2x",
+        "L1|日本04|直连|流媒体|2x",
+        "L1|日本05|直连|流媒体|2x",
+        "L1|韩国01|中转|流媒体|3x",
+        "L1|韩国02|中转|流媒体|3x",
+        "L1|韩国01|流媒体|2x",
+        "L1|韩国02|流媒体|2x",
+        "L1|美国01|中转|流媒体|3x",
+        "L1|美国02|中转|流媒体|3x",
+        "L1|美国03|中转|流媒体|3x",
+        "L1|美国04|中转|流媒体|3x",
+        "L1|美国05|中转|流媒体|3x",
+        "L1|美国01|直连|流媒体|2x",
+        "L1|美国02|直连|流媒体|2x",
+        "L1|美国03|直连|流媒体|2x",
+        "L1|美国04|直连|流媒体|2x",
+        "L1|美国05|直连|流媒体|2x",
+        "L1|台湾01|中转|流媒体|3x",
+        "L1|台湾02|中转|流媒体|3x",
+        "L1|台湾03|中转|流媒体|3x",
+        "L1|新加坡|免流|自定义1|1x",
+        "L1|新加坡|免流|自定义2|1x",
+        "L1|俄罗斯02|流媒体|1x",
+        "L2|土耳其01|中转|4x",
+        "L2|阿根廷01|中转|4x",
+        "L2|泰国01|中转|4x",
+        "L2|马来西亚01|中转|4x",
+        "L2|加拿大01|中转|4x",
+        "L2|印度01|中转|4x",
+        "L2|菲律宾01|中转|4x",
+        "L2|法国01|中转|4x",
+        "L2|尼日利亚01|中转|4x",
+        "L2|缅甸01|中转|4x",
+        "L2|越南01|中转|4x",
+        "L2|埃及01|中转|4x",
+        "L2|澳门01|中转|4x",
+        "L2|澳大利亚01|中转|4x",
+        "L2|乌克兰01|中转|4x",
+        "L2|巴西01|中转|4x",
+        "L2|柬埔寨01|中转|4x",
+        "L2|阿联酋01|中转|4x",
+        "L2|哈萨克斯坦01|中转|4x",
+        "L2|英国01|中转|4x",
+        "L2|巴基斯坦01|中转|4x",
+        "只有新加坡请更换客户端",
+        "直连地址：https://bit.ly/bbyvpn",
+        "TG群：https://t.me/bbyvpn",
+        "邀请好友返佣25%"
+      ],
+      "tag": "自动选择",
+      "tolerance": 50,
+      "type": "urltest",
+      "url": "http://cp.cloudflare.com/generate_204"
+    },
+    {
+      "outbounds": [
+        "自动选择",
+        "剩余流量：475.69 GB",
+        "套餐到期：长期有效",
+        "L1|香港01|中转|流媒体|3x",
+        "L1|香港02|中转|流媒体|3x",
+        "L1|香港03|中转|流媒体|3x",
+        "福建专用|香港04|中转|流媒体|3x",
+        "L1|新加坡01|中转|流媒体|3x",
+        "L1|新加坡02|中转|流媒体|3x",
+        "L1|新加坡03|中转|流媒体|3x",
+        "L1|新加坡04|中转|流媒体|3x",
+        "L1|新加坡05|中转|流媒体|3x",
+        "L1|新加坡06|流媒体|3x",
+        "L1|新加坡01|直连|流媒体|2x",
+        "L1|新加坡02|直连|流媒体|2x",
+        "L1|新加坡03|直连|流媒体|2x",
+        "L1|新加坡04|直连|流媒体|2x",
+        "L1|新加坡05|直连|流媒体|2x",
+        "L1|日本01|中转|流媒体|3x",
+        "L1|日本02|中转|流媒体|3x",
+        "L1|日本03|中转|流媒体|3x",
+        "L1|日本04|中转|流媒体|3x",
+        "L1|日本05|中转|流媒体|3x",
+        "L1|日本01|直连|流媒体|2x",
+        "L1|日本02|直连|流媒体|2x",
+        "L1|日本03|直连|流媒体|2x",
+        "L1|日本04|直连|流媒体|2x",
+        "L1|日本05|直连|流媒体|2x",
+        "L1|韩国01|中转|流媒体|3x",
+        "L1|韩国02|中转|流媒体|3x",
+        "L1|韩国01|流媒体|2x",
+        "L1|韩国02|流媒体|2x",
+        "L1|美国01|中转|流媒体|3x",
+        "L1|美国02|中转|流媒体|3x",
+        "L1|美国03|中转|流媒体|3x",
+        "L1|美国04|中转|流媒体|3x",
+        "L1|美国05|中转|流媒体|3x",
+        "L1|美国01|直连|流媒体|2x",
+        "L1|美国02|直连|流媒体|2x",
+        "L1|美国03|直连|流媒体|2x",
+        "L1|美国04|直连|流媒体|2x",
+        "L1|美国05|直连|流媒体|2x",
+        "L1|台湾01|中转|流媒体|3x",
+        "L1|台湾02|中转|流媒体|3x",
+        "L1|台湾03|中转|流媒体|3x",
+        "L1|新加坡|免流|自定义1|1x",
+        "L1|新加坡|免流|自定义2|1x",
+        "L1|俄罗斯02|流媒体|1x",
+        "L2|土耳其01|中转|4x",
+        "L2|阿根廷01|中转|4x",
+        "L2|泰国01|中转|4x",
+        "L2|马来西亚01|中转|4x",
+        "L2|加拿大01|中转|4x",
+        "L2|印度01|中转|4x",
+        "L2|菲律宾01|中转|4x",
+        "L2|法国01|中转|4x",
+        "L2|尼日利亚01|中转|4x",
+        "L2|缅甸01|中转|4x",
+        "L2|越南01|中转|4x",
+        "L2|埃及01|中转|4x",
+        "L2|澳门01|中转|4x",
+        "L2|澳大利亚01|中转|4x",
+        "L2|乌克兰01|中转|4x",
+        "L2|巴西01|中转|4x",
+        "L2|柬埔寨01|中转|4x",
+        "L2|阿联酋01|中转|4x",
+        "L2|哈萨克斯坦01|中转|4x",
+        "L2|英国01|中转|4x",
+        "L2|巴基斯坦01|中转|4x",
+        "只有新加坡请更换客户端",
+        "直连地址：https://bit.ly/bbyvpn",
+        "TG群：https://t.me/bbyvpn",
+        "邀请好友返佣25%"
+      ],
+      "tag": "手动切换",
+      "type": "selector"
+    },
+    {
+      "outbounds": [
+        "手动切换",
+        "自动选择",
+        "剩余流量：475.69 GB",
+        "套餐到期：长期有效",
+        "L1|香港01|中转|流媒体|3x",
+        "L1|香港02|中转|流媒体|3x",
+        "L1|香港03|中转|流媒体|3x",
+        "福建专用|香港04|中转|流媒体|3x",
+        "L1|新加坡01|中转|流媒体|3x",
+        "L1|新加坡02|中转|流媒体|3x",
+        "L1|新加坡03|中转|流媒体|3x",
+        "L1|新加坡04|中转|流媒体|3x",
+        "L1|新加坡05|中转|流媒体|3x",
+        "L1|新加坡06|流媒体|3x",
+        "L1|新加坡01|直连|流媒体|2x",
+        "L1|新加坡02|直连|流媒体|2x",
+        "L1|新加坡03|直连|流媒体|2x",
+        "L1|新加坡04|直连|流媒体|2x",
+        "L1|新加坡05|直连|流媒体|2x",
+        "L1|日本01|中转|流媒体|3x",
+        "L1|日本02|中转|流媒体|3x",
+        "L1|日本03|中转|流媒体|3x",
+        "L1|日本04|中转|流媒体|3x",
+        "L1|日本05|中转|流媒体|3x",
+        "L1|日本01|直连|流媒体|2x",
+        "L1|日本02|直连|流媒体|2x",
+        "L1|日本03|直连|流媒体|2x",
+        "L1|日本04|直连|流媒体|2x",
+        "L1|日本05|直连|流媒体|2x",
+        "L1|韩国01|中转|流媒体|3x",
+        "L1|韩国02|中转|流媒体|3x",
+        "L1|韩国01|流媒体|2x",
+        "L1|韩国02|流媒体|2x",
+        "L1|美国01|中转|流媒体|3x",
+        "L1|美国02|中转|流媒体|3x",
+        "L1|美国03|中转|流媒体|3x",
+        "L1|美国04|中转|流媒体|3x",
+        "L1|美国05|中转|流媒体|3x",
+        "L1|美国01|直连|流媒体|2x",
+        "L1|美国02|直连|流媒体|2x",
+        "L1|美国03|直连|流媒体|2x",
+        "L1|美国04|直连|流媒体|2x",
+        "L1|美国05|直连|流媒体|2x",
+        "L1|台湾01|中转|流媒体|3x",
+        "L1|台湾02|中转|流媒体|3x",
+        "L1|台湾03|中转|流媒体|3x",
+        "L1|新加坡|免流|自定义1|1x",
+        "L1|新加坡|免流|自定义2|1x",
+        "L1|俄罗斯02|流媒体|1x",
+        "L2|土耳其01|中转|4x",
+        "L2|阿根廷01|中转|4x",
+        "L2|泰国01|中转|4x",
+        "L2|马来西亚01|中转|4x",
+        "L2|加拿大01|中转|4x",
+        "L2|印度01|中转|4x",
+        "L2|菲律宾01|中转|4x",
+        "L2|法国01|中转|4x",
+        "L2|尼日利亚01|中转|4x",
+        "L2|缅甸01|中转|4x",
+        "L2|越南01|中转|4x",
+        "L2|埃及01|中转|4x",
+        "L2|澳门01|中转|4x",
+        "L2|澳大利亚01|中转|4x",
+        "L2|乌克兰01|中转|4x",
+        "L2|巴西01|中转|4x",
+        "L2|柬埔寨01|中转|4x",
+        "L2|阿联酋01|中转|4x",
+        "L2|哈萨克斯坦01|中转|4x",
+        "L2|英国01|中转|4x",
+        "L2|巴基斯坦01|中转|4x",
+        "只有新加坡请更换客户端",
+        "直连地址：https://bit.ly/bbyvpn",
+        "TG群：https://t.me/bbyvpn",
+        "邀请好友返佣25%"
+      ],
+      "tag": "Telegram",
+      "type": "selector"
+    },
+    {
+      "outbounds": [
+        "手动切换",
+        "自动选择",
+        "剩余流量：475.69 GB",
+        "套餐到期：长期有效",
+        "L1|香港01|中转|流媒体|3x",
+        "L1|香港02|中转|流媒体|3x",
+        "L1|香港03|中转|流媒体|3x",
+        "福建专用|香港04|中转|流媒体|3x",
+        "L1|新加坡01|中转|流媒体|3x",
+        "L1|新加坡02|中转|流媒体|3x",
+        "L1|新加坡03|中转|流媒体|3x",
+        "L1|新加坡04|中转|流媒体|3x",
+        "L1|新加坡05|中转|流媒体|3x",
+        "L1|新加坡06|流媒体|3x",
+        "L1|新加坡01|直连|流媒体|2x",
+        "L1|新加坡02|直连|流媒体|2x",
+        "L1|新加坡03|直连|流媒体|2x",
+        "L1|新加坡04|直连|流媒体|2x",
+        "L1|新加坡05|直连|流媒体|2x",
+        "L1|日本01|中转|流媒体|3x",
+        "L1|日本02|中转|流媒体|3x",
+        "L1|日本03|中转|流媒体|3x",
+        "L1|日本04|中转|流媒体|3x",
+        "L1|日本05|中转|流媒体|3x",
+        "L1|日本01|直连|流媒体|2x",
+        "L1|日本02|直连|流媒体|2x",
+        "L1|日本03|直连|流媒体|2x",
+        "L1|日本04|直连|流媒体|2x",
+        "L1|日本05|直连|流媒体|2x",
+        "L1|韩国01|中转|流媒体|3x",
+        "L1|韩国02|中转|流媒体|3x",
+        "L1|韩国01|流媒体|2x",
+        "L1|韩国02|流媒体|2x",
+        "L1|美国01|中转|流媒体|3x",
+        "L1|美国02|中转|流媒体|3x",
+        "L1|美国03|中转|流媒体|3x",
+        "L1|美国04|中转|流媒体|3x",
+        "L1|美国05|中转|流媒体|3x",
+        "L1|美国01|直连|流媒体|2x",
+        "L1|美国02|直连|流媒体|2x",
+        "L1|美国03|直连|流媒体|2x",
+        "L1|美国04|直连|流媒体|2x",
+        "L1|美国05|直连|流媒体|2x",
+        "L1|台湾01|中转|流媒体|3x",
+        "L1|台湾02|中转|流媒体|3x",
+        "L1|台湾03|中转|流媒体|3x",
+        "L1|新加坡|免流|自定义1|1x",
+        "L1|新加坡|免流|自定义2|1x",
+        "L1|俄罗斯02|流媒体|1x",
+        "L2|土耳其01|中转|4x",
+        "L2|阿根廷01|中转|4x",
+        "L2|泰国01|中转|4x",
+        "L2|马来西亚01|中转|4x",
+        "L2|加拿大01|中转|4x",
+        "L2|印度01|中转|4x",
+        "L2|菲律宾01|中转|4x",
+        "L2|法国01|中转|4x",
+        "L2|尼日利亚01|中转|4x",
+        "L2|缅甸01|中转|4x",
+        "L2|越南01|中转|4x",
+        "L2|埃及01|中转|4x",
+        "L2|澳门01|中转|4x",
+        "L2|澳大利亚01|中转|4x",
+        "L2|乌克兰01|中转|4x",
+        "L2|巴西01|中转|4x",
+        "L2|柬埔寨01|中转|4x",
+        "L2|阿联酋01|中转|4x",
+        "L2|哈萨克斯坦01|中转|4x",
+        "L2|英国01|中转|4x",
+        "L2|巴基斯坦01|中转|4x",
+        "只有新加坡请更换客户端",
+        "直连地址：https://bit.ly/bbyvpn",
+        "TG群：https://t.me/bbyvpn",
+        "邀请好友返佣25%"
+      ],
+      "tag": "YouTube",
+      "type": "selector"
+    },
+    {
+      "outbounds": [
+        "手动切换",
+        "自动选择",
+        "剩余流量：475.69 GB",
+        "套餐到期：长期有效",
+        "L1|香港01|中转|流媒体|3x",
+        "L1|香港02|中转|流媒体|3x",
+        "L1|香港03|中转|流媒体|3x",
+        "福建专用|香港04|中转|流媒体|3x",
+        "L1|新加坡01|中转|流媒体|3x",
+        "L1|新加坡02|中转|流媒体|3x",
+        "L1|新加坡03|中转|流媒体|3x",
+        "L1|新加坡04|中转|流媒体|3x",
+        "L1|新加坡05|中转|流媒体|3x",
+        "L1|新加坡06|流媒体|3x",
+        "L1|新加坡01|直连|流媒体|2x",
+        "L1|新加坡02|直连|流媒体|2x",
+        "L1|新加坡03|直连|流媒体|2x",
+        "L1|新加坡04|直连|流媒体|2x",
+        "L1|新加坡05|直连|流媒体|2x",
+        "L1|日本01|中转|流媒体|3x",
+        "L1|日本02|中转|流媒体|3x",
+        "L1|日本03|中转|流媒体|3x",
+        "L1|日本04|中转|流媒体|3x",
+        "L1|日本05|中转|流媒体|3x",
+        "L1|日本01|直连|流媒体|2x",
+        "L1|日本02|直连|流媒体|2x",
+        "L1|日本03|直连|流媒体|2x",
+        "L1|日本04|直连|流媒体|2x",
+        "L1|日本05|直连|流媒体|2x",
+        "L1|韩国01|中转|流媒体|3x",
+        "L1|韩国02|中转|流媒体|3x",
+        "L1|韩国01|流媒体|2x",
+        "L1|韩国02|流媒体|2x",
+        "L1|美国01|中转|流媒体|3x",
+        "L1|美国02|中转|流媒体|3x",
+        "L1|美国03|中转|流媒体|3x",
+        "L1|美国04|中转|流媒体|3x",
+        "L1|美国05|中转|流媒体|3x",
+        "L1|美国01|直连|流媒体|2x",
+        "L1|美国02|直连|流媒体|2x",
+        "L1|美国03|直连|流媒体|2x",
+        "L1|美国04|直连|流媒体|2x",
+        "L1|美国05|直连|流媒体|2x",
+        "L1|台湾01|中转|流媒体|3x",
+        "L1|台湾02|中转|流媒体|3x",
+        "L1|台湾03|中转|流媒体|3x",
+        "L1|新加坡|免流|自定义1|1x",
+        "L1|新加坡|免流|自定义2|1x",
+        "L1|俄罗斯02|流媒体|1x",
+        "L2|土耳其01|中转|4x",
+        "L2|阿根廷01|中转|4x",
+        "L2|泰国01|中转|4x",
+        "L2|马来西亚01|中转|4x",
+        "L2|加拿大01|中转|4x",
+        "L2|印度01|中转|4x",
+        "L2|菲律宾01|中转|4x",
+        "L2|法国01|中转|4x",
+        "L2|尼日利亚01|中转|4x",
+        "L2|缅甸01|中转|4x",
+        "L2|越南01|中转|4x",
+        "L2|埃及01|中转|4x",
+        "L2|澳门01|中转|4x",
+        "L2|澳大利亚01|中转|4x",
+        "L2|乌克兰01|中转|4x",
+        "L2|巴西01|中转|4x",
+        "L2|柬埔寨01|中转|4x",
+        "L2|阿联酋01|中转|4x",
+        "L2|哈萨克斯坦01|中转|4x",
+        "L2|英国01|中转|4x",
+        "L2|巴基斯坦01|中转|4x",
+        "只有新加坡请更换客户端",
+        "直连地址：https://bit.ly/bbyvpn",
+        "TG群：https://t.me/bbyvpn",
+        "邀请好友返佣25%"
+      ],
+      "tag": "Netflix",
+      "type": "selector"
+    },
+    {
+      "outbounds": [
+        "手动切换",
+        "自动选择",
+        "剩余流量：475.69 GB",
+        "套餐到期：长期有效",
+        "L1|香港01|中转|流媒体|3x",
+        "L1|香港02|中转|流媒体|3x",
+        "L1|香港03|中转|流媒体|3x",
+        "福建专用|香港04|中转|流媒体|3x",
+        "L1|新加坡01|中转|流媒体|3x",
+        "L1|新加坡02|中转|流媒体|3x",
+        "L1|新加坡03|中转|流媒体|3x",
+        "L1|新加坡04|中转|流媒体|3x",
+        "L1|新加坡05|中转|流媒体|3x",
+        "L1|新加坡06|流媒体|3x",
+        "L1|新加坡01|直连|流媒体|2x",
+        "L1|新加坡02|直连|流媒体|2x",
+        "L1|新加坡03|直连|流媒体|2x",
+        "L1|新加坡04|直连|流媒体|2x",
+        "L1|新加坡05|直连|流媒体|2x",
+        "L1|日本01|中转|流媒体|3x",
+        "L1|日本02|中转|流媒体|3x",
+        "L1|日本03|中转|流媒体|3x",
+        "L1|日本04|中转|流媒体|3x",
+        "L1|日本05|中转|流媒体|3x",
+        "L1|日本01|直连|流媒体|2x",
+        "L1|日本02|直连|流媒体|2x",
+        "L1|日本03|直连|流媒体|2x",
+        "L1|日本04|直连|流媒体|2x",
+        "L1|日本05|直连|流媒体|2x",
+        "L1|韩国01|中转|流媒体|3x",
+        "L1|韩国02|中转|流媒体|3x",
+        "L1|韩国01|流媒体|2x",
+        "L1|韩国02|流媒体|2x",
+        "L1|美国01|中转|流媒体|3x",
+        "L1|美国02|中转|流媒体|3x",
+        "L1|美国03|中转|流媒体|3x",
+        "L1|美国04|中转|流媒体|3x",
+        "L1|美国05|中转|流媒体|3x",
+        "L1|美国01|直连|流媒体|2x",
+        "L1|美国02|直连|流媒体|2x",
+        "L1|美国03|直连|流媒体|2x",
+        "L1|美国04|直连|流媒体|2x",
+        "L1|美国05|直连|流媒体|2x",
+        "L1|台湾01|中转|流媒体|3x",
+        "L1|台湾02|中转|流媒体|3x",
+        "L1|台湾03|中转|流媒体|3x",
+        "L1|新加坡|免流|自定义1|1x",
+        "L1|新加坡|免流|自定义2|1x",
+        "L1|俄罗斯02|流媒体|1x",
+        "L2|土耳其01|中转|4x",
+        "L2|阿根廷01|中转|4x",
+        "L2|泰国01|中转|4x",
+        "L2|马来西亚01|中转|4x",
+        "L2|加拿大01|中转|4x",
+        "L2|印度01|中转|4x",
+        "L2|菲律宾01|中转|4x",
+        "L2|法国01|中转|4x",
+        "L2|尼日利亚01|中转|4x",
+        "L2|缅甸01|中转|4x",
+        "L2|越南01|中转|4x",
+        "L2|埃及01|中转|4x",
+        "L2|澳门01|中转|4x",
+        "L2|澳大利亚01|中转|4x",
+        "L2|乌克兰01|中转|4x",
+        "L2|巴西01|中转|4x",
+        "L2|柬埔寨01|中转|4x",
+        "L2|阿联酋01|中转|4x",
+        "L2|哈萨克斯坦01|中转|4x",
+        "L2|英国01|中转|4x",
+        "L2|巴基斯坦01|中转|4x",
+        "只有新加坡请更换客户端",
+        "直连地址：https://bit.ly/bbyvpn",
+        "TG群：https://t.me/bbyvpn",
+        "邀请好友返佣25%"
+      ],
+      "tag": "OpenAI",
+      "type": "selector"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa01.communet.io",
+      "server_port": 40383,
+      "tag": "剩余流量：475.69 GB",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa01.communet.io",
+      "server_port": 40383,
+      "tag": "套餐到期：长期有效",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa01.communet.io",
+      "server_port": 40383,
+      "tag": "L1|香港01|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa01.communet.io",
+      "server_port": 40383,
+      "tag": "L1|香港02|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa01.communet.io",
+      "server_port": 40383,
+      "tag": "L1|香港03|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "183.236.97.54",
+      "server_port": 40383,
+      "tag": "福建专用|香港04|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa07.communet.io",
+      "server_port": 40381,
+      "tag": "L1|新加坡01|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa07.communet.io",
+      "server_port": 40381,
+      "tag": "L1|新加坡02|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa07.communet.io",
+      "server_port": 40381,
+      "tag": "L1|新加坡03|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa07.communet.io",
+      "server_port": 40381,
+      "tag": "L1|新加坡04|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa07.communet.io",
+      "server_port": 40381,
+      "tag": "L1|新加坡05|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "password": "835e3596-e358-4545-b815-b021c16d43a9",
+      "server": "zfa02.333210.best",
+      "server_port": 41381,
+      "tag": "L1|新加坡06|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "cdn.alibaba.com"
+      },
+      "transport": {
+        "service_name": "cdn.alibaba.com",
+        "type": "grpc"
+      },
+      "type": "trojan"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "sg01.333210.best",
+      "server_port": 40000,
+      "tag": "L1|新加坡01|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "sg02.333210.best",
+      "server_port": 40000,
+      "tag": "L1|新加坡02|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "sg03.333210.best",
+      "server_port": 40000,
+      "tag": "L1|新加坡03|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "Jqwg_L2lzNEBWCaH4oyqbw7KfqxtOA0TQXtxTaAU1nU",
+          "short_id": "aec0af41"
+        },
+        "server_name": "www.walmart.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "service_name": "bby",
+        "type": "grpc"
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "sg04.333210.best",
+      "server_port": 40000,
+      "tag": "L1|新加坡04|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "zmQlybXu8iCiAhwghmKa85-_2VQvjV51waoBp6A2YU8",
+          "short_id": "66739b1d"
+        },
+        "server_name": "www.walmart.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "service_name": "bby",
+        "type": "grpc"
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "sg05.333210.best",
+      "server_port": 40000,
+      "tag": "L1|新加坡05|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa06.communet.io",
+      "server_port": 40385,
+      "tag": "L1|日本01|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa06.communet.io",
+      "server_port": 40385,
+      "tag": "L1|日本02|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa06.communet.io",
+      "server_port": 40385,
+      "tag": "L1|日本03|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa06.communet.io",
+      "server_port": 40385,
+      "tag": "L1|日本04|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa06.communet.io",
+      "server_port": 40385,
+      "tag": "L1|日本05|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "jp01.333210.best",
+      "server_port": 40000,
+      "tag": "L1|日本01|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "jp02.333210.best",
+      "server_port": 40000,
+      "tag": "L1|日本02|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "jp03.333210.best",
+      "server_port": 40000,
+      "tag": "L1|日本03|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "jp04.333210.best",
+      "server_port": 40000,
+      "tag": "L1|日本04|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "wLktBnGvBGFY-N8LCTB5gII2ulgiJBtSYBj33iboKhA",
+          "short_id": "0df23482"
+        },
+        "server_name": "www.walmart.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "service_name": "bby",
+        "type": "grpc"
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "jp05.333210.best",
+      "server_port": 40000,
+      "tag": "L1|日本05|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "bIgrybTEILwGmrQS956HzrdYjqzeUGK972q8Zevqrh8",
+          "short_id": "e80d3a89"
+        },
+        "server_name": "www.walmart.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "service_name": "bby",
+        "type": "grpc"
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa05.communet.io",
+      "server_port": 40386,
+      "tag": "L1|韩国01|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa05.communet.io",
+      "server_port": 40386,
+      "tag": "L1|韩国02|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "kra01.333210.best",
+      "server_port": 40000,
+      "tag": "L1|韩国01|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "kra02.333210.best",
+      "server_port": 40000,
+      "tag": "L1|韩国02|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa05.communet.io",
+      "server_port": 40384,
+      "tag": "L1|美国01|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa05.communet.io",
+      "server_port": 40384,
+      "tag": "L1|美国02|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa05.communet.io",
+      "server_port": 40384,
+      "tag": "L1|美国03|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa05.communet.io",
+      "server_port": 40384,
+      "tag": "L1|美国04|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa05.communet.io",
+      "server_port": 40384,
+      "tag": "L1|美国05|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "us01.333210.best",
+      "server_port": 40000,
+      "tag": "L1|美国01|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "us02.333210.best",
+      "server_port": 40000,
+      "tag": "L1|美国02|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "us03.333210.best",
+      "server_port": 40000,
+      "tag": "L1|美国03|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "us04.333210.best",
+      "server_port": 40000,
+      "tag": "L1|美国04|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "7wOM3o0jTVZsr3Qjfu1QqBQ1e4gsbm9LGlnNjTfWzAs",
+          "short_id": "1fdd5d08"
+        },
+        "server_name": "www.walmart.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "service_name": "bby",
+        "type": "grpc"
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "",
+      "packet_encoding": "xudp",
+      "server": "us05.333210.best",
+      "server_port": 40000,
+      "tag": "L1|美国05|直连|流媒体|2x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "UpF-zQLrI4r8g1yRF65vs8h1GdPrHcJ3z7NI16GU5mU",
+          "short_id": "2f85dd87"
+        },
+        "server_name": "www.walmart.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "service_name": "bby",
+        "type": "grpc"
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa04.communet.io",
+      "server_port": 40380,
+      "tag": "L1|台湾01|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa04.communet.io",
+      "server_port": 40380,
+      "tag": "L1|台湾02|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa04.communet.io",
+      "server_port": 40380,
+      "tag": "L1|台湾03|中转|流媒体|3x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "alter_id": 0,
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "security": "auto",
+      "server": "ml01.333984.xyz",
+      "server_port": 40000,
+      "tag": "L1|新加坡|免流|自定义1|1x",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048,
+        "path": "/bby",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "alter_id": 0,
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "security": "auto",
+      "server": "ml02.333984.xyz",
+      "server_port": 40000,
+      "tag": "L1|新加坡|免流|自定义2|1x",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048,
+        "path": "/bby",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "rua02.333210.best",
+      "server_port": 40000,
+      "tag": "L1|俄罗斯02|流媒体|1x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "400567.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 40387,
+      "tag": "L2|土耳其01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42389,
+      "tag": "L2|阿根廷01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42390,
+      "tag": "L2|泰国01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42391,
+      "tag": "L2|马来西亚01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42392,
+      "tag": "L2|加拿大01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42393,
+      "tag": "L2|印度01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42394,
+      "tag": "L2|菲律宾01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42395,
+      "tag": "L2|法国01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42396,
+      "tag": "L2|尼日利亚01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42397,
+      "tag": "L2|缅甸01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42398,
+      "tag": "L2|越南01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42399,
+      "tag": "L2|埃及01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42400,
+      "tag": "L2|澳门01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42401,
+      "tag": "L2|澳大利亚01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42402,
+      "tag": "L2|乌克兰01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42403,
+      "tag": "L2|巴西01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42404,
+      "tag": "L2|柬埔寨01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42405,
+      "tag": "L2|阿联酋01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42406,
+      "tag": "L2|哈萨克斯坦01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42407,
+      "tag": "L2|英国01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "server": "zfa03.communet.io",
+      "server_port": 42408,
+      "tag": "L2|巴基斯坦01|中转|4x",
+      "tls": {
+        "enabled": true,
+        "insecure": false,
+        "server_name": "bby.communet.io",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        }
+      },
+      "type": "vless",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "alter_id": 0,
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "security": "auto",
+      "server": "ml01.333984.xyz",
+      "server_port": 40000,
+      "tag": "只有新加坡请更换客户端",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048,
+        "path": "/bby",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "alter_id": 0,
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "security": "auto",
+      "server": "ml01.333984.xyz",
+      "server_port": 40000,
+      "tag": "直连地址：https://bit.ly/bbyvpn",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048,
+        "path": "/bby",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "alter_id": 0,
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "security": "auto",
+      "server": "ml01.333984.xyz",
+      "server_port": 40000,
+      "tag": "TG群：https://t.me/bbyvpn",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048,
+        "path": "/bby",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    },
+    {
+      "alter_id": 0,
+      "domain_resolver": {
+        "server": "dns_resolver",
+        "strategy": "ipv4_only"
+      },
+      "security": "auto",
+      "server": "ml01.333984.xyz",
+      "server_port": 40000,
+      "tag": "邀请好友返佣25%",
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "max_early_data": 2048,
+        "path": "/bby",
+        "type": "ws"
+      },
+      "type": "vmess",
+      "uuid": "835e3596-e358-4545-b815-b021c16d43a9"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "default_domain_resolver": "dns_resolver",
+    "final": "手动切换",
+    "rule_set": [
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-category-ads-all",
+        "type": "remote",
+        "update_interval": "1d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-cn",
+        "type": "remote",
+        "update_interval": "1d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-geolocation-!cn",
+        "type": "remote",
+        "update_interval": "1d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-telegram",
+        "type": "remote",
+        "update_interval": "7d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-youtube",
+        "type": "remote",
+        "update_interval": "7d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-netflix",
+        "type": "remote",
+        "update_interval": "7d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-openai",
+        "type": "remote",
+        "update_interval": "7d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-private",
+        "type": "remote",
+        "update_interval": "7d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-cn",
+        "type": "remote",
+        "update_interval": "1d",
+        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      }
+    ],
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "action": "hijack-dns",
+        "protocol": "dns"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "手动切换"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "action": "reject",
+        "rule_set": "geosite-category-ads-all"
+      },
+      {
+        "outbound": "Telegram",
+        "rule_set": "geosite-telegram"
+      },
+      {
+        "outbound": "YouTube",
+        "rule_set": "geosite-youtube"
+      },
+      {
+        "outbound": "Netflix",
+        "rule_set": "geosite-netflix"
+      },
+      {
+        "outbound": "OpenAI",
+        "rule_set": "geosite-openai"
+      },
+      {
+        "outbound": "direct",
+        "rule_set": "geosite-private"
+      },
+      {
+        "ip_cidr": [
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "127.0.0.0/8",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.168.0.0/16",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "outbound": "direct",
+        "rule_set": [
+          "geosite-cn",
+          "geoip-cn"
+        ]
+      },
+      {
+        "outbound": "手动切换",
+        "rule_set": "geosite-geolocation-!cn"
+      }
+    ]
+  }
+}
