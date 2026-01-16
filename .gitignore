@@ -1,5 +1,4 @@
-.ssh/id_*
-home/.ssh/id_*
+home/.ssh/
 PUSH_TO_GITHUB.md
 SSH_SETUP.md
 
@@ -10,10 +9,17 @@ home/.z
 home/.zfm.txt
 home/.profile.tmp
 
-# Generated Configs and Backups
+# Bash (Not used)
+home/.bash*
+
+# Generated / Unnecessary Configs
 home/.config/starship.toml.backup
+home/.config/starship-clean.toml
 home/.config/user-dirs.dirs
 home/.config/user-dirs.locale
+home/.config/kdeglobals
+home/.config/mimeapps.list
+home/.config/pavucontrol.ini
 
 # Zimfw (Managed by .zimrc)
 home/.zim/
