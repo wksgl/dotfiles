@@ -1,7 +1,7 @@
 .ssh/id_*
+home/.ssh/id_*
 PUSH_TO_GITHUB.md
 SSH_SETUP.md
-copy_files.sh
 
 # Cache, Logs, and History
 home/.npm/
