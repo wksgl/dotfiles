@@ -2,3 +2,18 @@
 PUSH_TO_GITHUB.md
 SSH_SETUP.md
 copy_files.sh
+
+# Cache, Logs, and History
+home/.npm/
+home/.viminfo
+home/.z
+home/.zfm.txt
+home/.profile.tmp
+
+# Generated Configs and Backups
+home/.config/starship.toml.backup
+home/.config/user-dirs.dirs
+home/.config/user-dirs.locale
+
+# Zimfw (Managed by .zimrc)
+home/.zim/
