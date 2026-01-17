@@ -40,3 +40,8 @@ set clipboard=unnamedplus
 " 接管鼠标事件
 set mouse=a
 
+" 加载本地私有配置（不提交到Git）
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
+

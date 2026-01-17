@@ -9,6 +9,11 @@ home/.z
 home/.zfm.txt
 home/.profile.tmp
 
+# Local private configurations
+home/.zshrc.local
+home/.vimrc.local
+home/.nvimrc.local
+
 # Bash (Not used)
 home/.bash*
 
