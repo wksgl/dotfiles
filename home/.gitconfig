@@ -1,7 +1,7 @@
 [http]
-	proxy = socks5://127.0.0.1:8080
+	proxy = socks5://127.0.0.1:12080
 [https]
-	proxy = socks5://127.0.0.1:8080
+	proxy = socks5://127.0.0.1:12080
 [user]
 	name = wksgl
 	email = wksgl@gmail.com

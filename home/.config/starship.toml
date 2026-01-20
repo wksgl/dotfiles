@@ -22,23 +22,23 @@ palette = 'colors'
 
 [palettes.colors]
 # 高对比度文字颜色（在透明背景下清晰可见）
-color_text_primary = '#dee3e6'      # 主要文字
+color_text_primary = '#dee4df'      # 主要文字
 color_text_error = '#ffb4ab'             # 错误/警告文字
-color_text_success = '#c5c3ea'        # 成功文字
+color_text_success = '#a8cbe2'        # 成功文字
 
 # 强调色（用于特殊元素）
-color_accent_blue = '#8ad0ee'          # 蓝色强调
-color_accent_yellow = '#b4cad5'      # 黄色强调
-color_accent_purple = '#444364' # 紫色强调
-color_accent_aqua = '#354a53'  # 青色强调
+color_accent_blue = '#88d6bb'          # 蓝色强调
+color_accent_yellow = '#b2ccc1'      # 黄色强调
+color_accent_purple = '#284b5d' # 紫色强调
+color_accent_aqua = '#344c43'  # 青色强调
 
 # 向后兼容的别名
-color_green = '#c5c3ea'               # 绿色（成功）
+color_green = '#a8cbe2'               # 绿色（成功）
 color_red = '#ffb4ab'                    # 红色（错误）
-color_blue = '#8ad0ee'                 # 蓝色
-color_yellow = '#b4cad5'             # 黄色
-color_aqua = '#354a53'     # 青色
-color_purple = '#444364'    # 紫色
+color_blue = '#88d6bb'                 # 蓝色
+color_yellow = '#b2ccc1'             # 黄色
+color_aqua = '#344c43'     # 青色
+color_purple = '#284b5d'    # 紫色
 
 [os]
 disabled = true
