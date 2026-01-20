@@ -21,24 +21,30 @@ $line_break$character"""
 palette = 'colors'
 
 [palettes.colors]
-# 高对比度文字颜色（在透明背景下清晰可见）
-color_text_primary = '#dee4df'      # 主要文字
-color_text_error = '#ffb4ab'             # 错误/警告文字
-color_text_success = '#a8cbe2'        # 成功文字
+# --- 高对比度文字颜色 ---
+# 使用 on_surface 确保在背景上清晰可见
+color_text_primary = '{{colors.on_surface.default.hex}}'
+# 使用 error 颜色
+color_text_error = '{{colors.error.default.hex}}'
+# 成功通常用绿色，这里可以用 tertiary 或自定义映射
+color_text_success = '{{colors.tertiary.default.hex}}'
 
-# 强调色（用于特殊元素）
-color_accent_blue = '#88d6bb'          # 蓝色强调
-color_accent_yellow = '#b2ccc1'      # 黄色强调
-color_accent_purple = '#284b5d' # 紫色强调
-color_accent_aqua = '#344c43'  # 青色强调
+# --- 强调色 ---
+# Matugen 生成的是 Material Design 颜色 (Primary, Secondary, Tertiary 等)
+# 你需要根据喜好把它们映射给你的变量
+color_accent_blue = '{{colors.primary.default.hex}}'
+color_accent_yellow = '{{colors.secondary.default.hex}}'
+color_accent_purple = '{{colors.tertiary.default.hex}}'
+color_accent_aqua = '{{colors.primary_container.default.hex}}'
 
-# 向后兼容的别名
-color_green = '#a8cbe2'               # 绿色（成功）
-color_red = '#ffb4ab'                    # 红色（错误）
-color_blue = '#88d6bb'                 # 蓝色
-color_yellow = '#b2ccc1'             # 黄色
-color_aqua = '#344c43'     # 青色
-color_purple = '#284b5d'    # 紫色
+# --- 向后兼容的别名 (复用上面的变量) ---
+color_green = '{{colors.tertiary.default.hex}}'
+color_red = '{{colors.error.default.hex}}'
+color_blue = '{{colors.primary.default.hex}}'
+color_yellow = '{{colors.secondary.default.hex}}'
+color_aqua = '{{colors.primary_container.default.hex}}'
+color_purple = '{{colors.tertiary.default.hex}}'
+
 
 [os]
 disabled = true
