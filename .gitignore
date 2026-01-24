@@ -19,7 +19,6 @@ home/.bash*
 
 # Generated / Unnecessary Configs
 home/.config/starship.toml
-home/.config/starship.toml.backup
 home/.config/starship-clean.toml
 home/.config/user-dirs.dirs
 home/.config/user-dirs.locale
