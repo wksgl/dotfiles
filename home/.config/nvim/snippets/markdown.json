@@ -1,0 +1,125 @@
+{
+  "Frontmatter (Hugo/Jekyll)": {
+    "prefix": "fm",
+    "body": [
+      "---",
+      "title: \"${1:Untitled}\"",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:00+08:00",
+      "draft: ${2|true,false|}",
+      "tags: [\"${3:Linux}\"]",
+      "categories: [\"${4:Ops}\"]",
+      "---",
+      "",
+      "$0"
+    ],
+    "description": "Insert YAML Frontmatter for static sites"
+  },
+  "Bash Code Block": {
+    "prefix": "bash",
+    "body": [
+      "```bash",
+      "$1",
+      "```",
+      "$0"
+    ],
+    "description": "Insert a Bash code block"
+  },
+  "JSON Code Block": {
+    "prefix": "json",
+    "body": [
+      "```json",
+      "$1",
+      "```",
+      "$0"
+    ],
+    "description": "Insert a JSON code block"
+  },
+  "YAML Code Block": {
+    "prefix": "yaml",
+    "body": [
+      "```yaml",
+      "$1",
+      "```",
+      "$0"
+    ],
+    "description": "Insert a YAML code block"
+  },
+  "Generic Code Block": {
+    "prefix": "code",
+    "body": [
+      "```${1:language}",
+      "$2",
+      "```",
+      "$0"
+    ],
+    "description": "Insert a generic code block"
+  },
+  "Link": {
+    "prefix": "link",
+    "body": [
+      "${1:text} [<sup>1</sup>](${2:url})"
+    ],
+    "description": "Insert a Markdown link"
+  },
+  "Image": {
+    "prefix": "img",
+    "body": 
+      "![${1:alt text} [<sup>1</sup>](${2:url})"
+    ],
+    "description": "Insert an image"
+  },
+  "Checklist": {
+    "prefix": "todo",
+    "body": [
+      "- [ ] $1",
+      "- [ ] $2",
+      "$0"
+    ],
+    "description": "Insert a checklist"
+  },
+  "Table (3x3)": {
+    "prefix": "table",
+    "body": [
+      "| ${1:Header 1} | ${2:Header 2} | ${3:Header 3} |",
+      "| :--- | :--- | :--- |",
+      "| ${4:Row 1 Col 1} | ${5:Row 1 Col 2} | ${6:Row 1 Col 3} |",
+      "| ${7:Row 2 Col 1} | ${8:Row 2 Col 2} | ${9:Row 2 Col 3} |",
+      "$0"
+    ],
+    "description": "Insert a 3x3 table"
+  },
+  "Details (Collapsible)": {
+    "prefix": "fold",
+    "body": [
+      "<details>",
+      "<summary>${1:Click to expand logs}</summary>",
+      "",
+      "```${2:text}",
+      "$3",
+      "```",
+      "",
+      "</details>",
+      "$0"
+    ],
+    "description": "Insert HTML details/summary tag (useful for long logs)"
+  },
+  "GitHub Alert (Note)": {
+    "prefix": "note",
+    "body": [
+      "> [!NOTE]",
+      "> ${1:Useful information that users should know even when skimming.}",
+      "$0"
+    ],
+    "description": "Insert GitHub style Note alert"
+  },
+  "GitHub Alert (Warning)": {
+    "prefix": "warn",
+    "body": [
+      "> [!WARNING]",
+      "> ${1:Urgent info that needs immediate user attention to avoid problems.}",
+      "$0"
+    ],
+    "description": "Insert GitHub style Warning alert"
+  }
+}
+

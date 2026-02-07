@@ -57,9 +57,11 @@ if (( ${+ZSH_AUTOSUGGEST_MANUAL_REBIND} )) && (( ${+functions[_zsh_autosuggest_b
 fi
 
 # ------------------
-# 6. 本地私有配置 (救命稻草)
+# 6. 本地私有配置 
 # ------------------
 # 将你的 Token 和不想上传到 Git 的配置写在 ~/.zshrc.local 里
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+
 
 

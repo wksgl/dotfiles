@@ -95,7 +95,7 @@
     "format-disconnected": " ",    
     "tooltip-format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
     "on-click": "~/.config/waybar/scripts/toggle-singbox.sh",
-    "on-click-right": "/home/zane/AppImages/sing-box-windows_2.2.3_amd64.AppImage"
+    "on-click-right": "/home/zane/.local/bin/gui-singbox"
   },
   //左键循环切换性能模式
   "power-profiles-daemon": {
@@ -185,7 +185,7 @@
   "custom/applauncher": {
     "tooltip-format": "Click to Open Applauncher or Right-Click to Select Wallpaper or Middle-Click to toggle blur bg",
     "format": "󰣇",
-    "on-click": "fuzzel",
+    "on-click": "wofi",
     "on-click-right": "waypaper",
     "on-click-middle":"~/.config/scripts/niri_auto_blur_bg.sh || pkill -f niri_auto_blur_bg.sh"
   },

@@ -1,0 +1,21 @@
+{
+  "Smart Main": {
+    "prefix": ["main", "int main", "imain"],
+    "body": [
+      "int main(int argc, char *argv[]) {",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Standard main function"
+  },
+  "Void Main": {
+    "prefix": ["vmain"],
+    "body": [
+      "void main(void) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Void main function"
+  }
+}
