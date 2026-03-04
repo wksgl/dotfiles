@@ -55,6 +55,7 @@ return {
       keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
       keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
       keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor in cwd" })
+      keymap.set("n", "<leader>ft", builtin.filetypes, { desc = "Select filetype (VSCode-like)" })
     end,
   },
 }
