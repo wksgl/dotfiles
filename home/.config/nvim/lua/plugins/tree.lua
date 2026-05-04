@@ -13,12 +13,11 @@ return {
 
         local function l_or_enter(state)
             local node = state.tree:get_node()
+            local cmd = require("neo-tree.sources.filesystem.commands")
             if node.type == "directory" then
-                -- 目录：cd 进入
-                require("neo-tree.sources.filesystem.commands").set_root(state.tree, node)
+                cmd.set_root(state)
             else
-                -- 文件、符号链接：正常打开
-                require("neo-tree.sources.filesystem.commands").open(state.tree, node)
+                cmd.open(state)
             end
         end
 
