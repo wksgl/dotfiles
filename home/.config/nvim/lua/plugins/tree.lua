@@ -9,7 +9,18 @@ return {
     config = function()
         vim.keymap.set("n", "<Leader><Tab>", ":Neotree toggle<CR>", { desc = "Toggle file tree", silent = true })
 
-        -- / 搜索过滤文件  l 打开/进入  h/Backspace 返回上级  a 新建
+        -- / 搜索过滤  l 文件=打开/目录=进入  h/BS 返回上级  a 新建
+
+        local function l_or_enter(state)
+            local node = state.tree:get_node()
+            if node.type == "directory" then
+                -- 目录：cd 进入
+                require("neo-tree.sources.filesystem.commands").set_root(state.tree, node)
+            else
+                -- 文件、符号链接：正常打开
+                require("neo-tree.sources.filesystem.commands").open(state.tree, node)
+            end
+        end
 
         require("neo-tree").setup({
             close_if_last_window = true,
@@ -18,7 +29,7 @@ return {
                 width = 30,
                 mappings = {
                     ["/"] = "filter_on_submit",
-                    ["l"] = "open",
+                    ["l"] = l_or_enter,
                     ["h"] = "navigate_up",
                     ["<bs>"] = "navigate_up",
                 },
@@ -31,6 +42,7 @@ return {
                 window = {
                     mappings = {
                         ["/"] = "filter_on_submit",
+                        ["l"] = l_or_enter,
                         ["h"] = "navigate_up",
                         ["<bs>"] = "navigate_up",
                     },
