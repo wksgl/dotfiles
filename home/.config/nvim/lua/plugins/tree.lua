@@ -9,11 +9,7 @@ return {
     config = function()
         vim.keymap.set("n", "<Leader><Tab>", ":Neotree toggle<CR>", { desc = "Toggle file tree", silent = true })
 
-        -- / 在树中搜索过滤文件名
-        -- H 返回根目录
-        -- <BS> 返回上级目录
-        -- <CR> 打开文件
-        -- a 新建文件/目录
+        -- / 搜索过滤文件  l 打开/进入  h/Backspace 返回上级  a 新建
 
         require("neo-tree").setup({
             close_if_last_window = true,
@@ -21,10 +17,9 @@ return {
             window = {
                 width = 30,
                 mappings = {
-                    ["/"] = "filter_on_submit", -- 搜索过滤文件
-                    ["H"] = "navigate_up",
+                    ["/"] = "filter_on_submit",
                     ["l"] = "open",
-                    ["h"] = "close_node",
+                    ["h"] = "navigate_up",
                     ["<bs>"] = "navigate_up",
                 },
             },
@@ -36,6 +31,7 @@ return {
                 window = {
                     mappings = {
                         ["/"] = "filter_on_submit",
+                        ["h"] = "navigate_up",
                         ["<bs>"] = "navigate_up",
                     },
                 },
