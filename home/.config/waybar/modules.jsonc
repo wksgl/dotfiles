@@ -357,6 +357,14 @@
       },
     ],
   },
+  "custom/dooit": {
+    "exec": "~/.config/waybar/scripts/dooit.sh",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 30,
+    "tooltip": true,
+    "on-click": "kitty -e dooit"
+  },
   "cffi/niri-taskbar": {
     // module_path
     "module_path": "/usr/lib/waybar/libniri_taskbar.so",

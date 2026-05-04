@@ -65,3 +65,23 @@ fi
 
 
 
+
+# opencode (XDG compliant)
+export OPENCODE_CONFIG_DIR="$HOME/.config/opencode"
+export PATH="$OPENCODE_CONFIG_DIR/bin:$PATH"
+
+# XDG: 让 npm/bun 不乱放 ~/ 目录
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+
+# bun completions
+[ -s "/home/zane/.bun/_bun" ] && source "/home/zane/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/share/../bin/env"

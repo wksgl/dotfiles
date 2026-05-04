@@ -14,7 +14,8 @@
         "custom/screenshot",
         "custom/wfrec",
         "custom/colorpicker",
-        "niri/window"
+        "niri/window",
+        "custom/dooit"
     ],
     "modules-center": [
         "custom/applauncher",
