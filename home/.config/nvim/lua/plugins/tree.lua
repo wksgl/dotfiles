@@ -28,7 +28,7 @@ return {
             for i, s in ipairs(sources_list) do
                 if s == current then
                     local next_src = sources_list[(i % #sources_list) + 1]
-                    vim.cmd("Neotree source=" .. next_src)
+                    require("neo-tree.command").execute({ source = next_src, action = "focus" })
                     return
                 end
             end
