@@ -2,7 +2,7 @@ return {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
-    event = "VeryLazy",
+    lazy = false,
     config = function()
         require("bufferline").setup {
             options = {
@@ -45,10 +45,6 @@ return {
                 always_show_bufferline = true,
             }
         }
-
-        if vim.bo.filetype == "alpha" then
-            vim.opt.showtabline = 0
-        end
 
         local normal_bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg
         if normal_bg then
