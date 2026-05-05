@@ -48,7 +48,6 @@ return {
             window = {
                 width = 30,
                 mappings = {
-                    ["/"] = "filter_on_submit",
                     ["l"] = l_or_enter,
                     ["h"] = "navigate_up",
                     ["<bs>"] = "navigate_up",
