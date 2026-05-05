@@ -21,11 +21,24 @@ return {
             end
         end
 
+        local sources_list = { "filesystem", "buffers", "git_status" }
+
+        local function cycle_source(state)
+            local current = state.name
+            for i, s in ipairs(sources_list) do
+                if s == current then
+                    local next_src = sources_list[(i % #sources_list) + 1]
+                    vim.cmd("Neotree source=" .. next_src)
+                    return
+                end
+            end
+        end
+
         require("neo-tree").setup({
             close_if_last_window = true,
             popup_border_style = "rounded",
             source_selector = {
-                winbar = true,        -- 顶部标签页
+                winbar = true,
                 sources = {
                     { source = "filesystem", display_name = "   󰉓 Files " },
                     { source = "buffers", display_name = "   󰈚 Buffers " },
@@ -39,6 +52,7 @@ return {
                     ["l"] = l_or_enter,
                     ["h"] = "navigate_up",
                     ["<bs>"] = "navigate_up",
+                    ["<Tab>"] = cycle_source,
                 },
             },
             filesystem = {
@@ -52,6 +66,7 @@ return {
                         ["l"] = l_or_enter,
                         ["h"] = "navigate_up",
                         ["<bs>"] = "navigate_up",
+                        ["<Tab>"] = cycle_source,
                     },
                 },
             },
