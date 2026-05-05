@@ -24,6 +24,14 @@ return {
         require("neo-tree").setup({
             close_if_last_window = true,
             popup_border_style = "rounded",
+            source_selector = {
+                winbar = true,        -- 顶部标签页
+                sources = {
+                    { source = "filesystem", display_name = "   󰉓 Files " },
+                    { source = "buffers", display_name = "   󰈚 Buffers " },
+                    { source = "git_status", display_name = "    Git " },
+                },
+            },
             window = {
                 width = 30,
                 mappings = {
