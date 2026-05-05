@@ -48,9 +48,6 @@ return {
             window = {
                 width = 30,
                 mappings = {
-                    ["l"] = l_or_enter,
-                    ["h"] = "navigate_up",
-                    ["<bs>"] = "navigate_up",
                     ["<Tab>"] = cycle_source,
                 },
             },
